@@ -2,7 +2,7 @@
 
 An extended version of [Ramin Mohammadi's FastAPI lab](https://github.com/raminmohammadi/MLOps/tree/main/Labs/API_Labs/FastAPI_Labs). The original trains an Iris decision tree. This project serves a wine random forest and explores twelve FastAPI operations, file uploads, dependencies, middleware, persistent CRUD, and background tasks.
 
-**[PDF report](Machine_Learning_Operations_FastAPI_Report.pdf)** · [LaTeX source](report/main.tex) · [Recorded live HTTP responses](evidence/live-api.json) · [Ubuntu test output](evidence/ubuntu-verification.txt)
+**[Overleaf project](https://www.overleaf.com/project/6ae121baf65b08b762ab313e)** · **[PDF report](Machine_Learning_Operations_FastAPI_Report.pdf)** · [LaTeX source](report/main.tex) · [Recorded live HTTP responses](evidence/live-api.json) · [Ubuntu test output](evidence/ubuntu-verification.txt)
 
 ## Run with Docker
 
