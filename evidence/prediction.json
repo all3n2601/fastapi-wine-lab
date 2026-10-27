@@ -1,0 +1,11 @@
+{
+  "predicted_class": 0,
+  "cultivar": "class_0",
+  "probabilities": {
+    "class_0": 0.935,
+    "class_1": 0.04,
+    "class_2": 0.025
+  },
+  "model": "wine-random-forest-v1",
+  "prediction_id": 9
+}

@@ -1,0 +1,636 @@
+{
+  "requests": 45,
+  "correct": 45,
+  "results": [
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.935,
+          "class_1": 0.04,
+          "class_2": 0.025
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 16
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.03,
+          "class_1": 0.965,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 17
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.94,
+          "class_1": 0.035,
+          "class_2": 0.025
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 18
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.96,
+          "class_1": 0.035,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 19
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.01,
+          "class_1": 0.99,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 20
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.985,
+          "class_1": 0.01,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 21
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.965,
+          "class_1": 0.025,
+          "class_2": 0.01
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 22
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.01,
+          "class_1": 0.855,
+          "class_2": 0.135
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 23
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.155,
+          "class_1": 0.835,
+          "class_2": 0.01
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 24
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.03,
+          "class_1": 0.26,
+          "class_2": 0.71
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 25
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.22,
+          "class_1": 0.685,
+          "class_2": 0.095
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 26
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.005,
+          "class_1": 0.93,
+          "class_2": 0.065
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 27
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.025,
+          "class_2": 0.975
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 28
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.03,
+          "class_2": 0.97
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 29
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.935,
+          "class_1": 0.05,
+          "class_2": 0.015
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 30
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.325,
+          "class_1": 0.595,
+          "class_2": 0.08
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 31
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.99,
+          "class_2": 0.01
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 32
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.865,
+          "class_1": 0.135,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 33
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.98,
+          "class_1": 0.015,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 34
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.015,
+          "class_2": 0.985
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 35
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.03,
+          "class_1": 0.2,
+          "class_2": 0.77
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 36
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.0,
+          "class_2": 1.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 37
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.73,
+          "class_1": 0.27,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 38
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.99,
+          "class_1": 0.01,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 39
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.01,
+          "class_1": 0.56,
+          "class_2": 0.43
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 40
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.02,
+          "class_1": 0.925,
+          "class_2": 0.055
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 41
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.995,
+          "class_1": 0.005,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 42
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.415,
+          "class_1": 0.53,
+          "class_2": 0.055
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 43
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.775,
+          "class_1": 0.225,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 44
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.035,
+          "class_1": 0.965,
+          "class_2": 0.0
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 45
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.89,
+          "class_1": 0.075,
+          "class_2": 0.035
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 46
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.005,
+          "class_1": 0.035,
+          "class_2": 0.96
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 47
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.045,
+          "class_1": 0.95,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 48
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.01,
+          "class_1": 0.05,
+          "class_2": 0.94
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 49
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.01,
+          "class_2": 0.99
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 50
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.0,
+          "class_1": 0.995,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 51
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.965,
+          "class_1": 0.03,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 52
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.045,
+          "class_1": 0.005,
+          "class_2": 0.95
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 53
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.02,
+          "class_1": 0.25,
+          "class_2": 0.73
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 54
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.015,
+          "class_1": 0.94,
+          "class_2": 0.045
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 55
+      }
+    },
+    {
+      "expected": 2,
+      "response": {
+        "predicted_class": 2,
+        "cultivar": "class_2",
+        "probabilities": {
+          "class_0": 0.03,
+          "class_1": 0.065,
+          "class_2": 0.905
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 56
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.045,
+          "class_1": 0.835,
+          "class_2": 0.12
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 57
+      }
+    },
+    {
+      "expected": 0,
+      "response": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.98,
+          "class_1": 0.015,
+          "class_2": 0.005
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 58
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.01,
+          "class_1": 0.905,
+          "class_2": 0.085
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 59
+      }
+    },
+    {
+      "expected": 1,
+      "response": {
+        "predicted_class": 1,
+        "cultivar": "class_1",
+        "probabilities": {
+          "class_0": 0.19,
+          "class_1": 0.76,
+          "class_2": 0.05
+        },
+        "model": "wine-random-forest-v1",
+        "prediction_id": 60
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "prediction_id": 10,
+  "body": {
+    "id": 10,
+    "created_at": "2026-10-27T22:08:27.501Z",
+    "cultivar": "class_0",
+    "predicted_class": 0,
+    "input": {
+      "alcohol": 13.48,
+      "malic_acid": 1.81,
+      "ash": 2.41,
+      "alcalinity_of_ash": 20.5,
+      "magnesium": 100.0,
+      "total_phenols": 2.7,
+      "flavanoids": 2.98,
+      "nonflavanoid_phenols": 0.26,
+      "proanthocyanins": 1.86,
+      "color_intensity": 5.1,
+      "hue": 1.04,
+      "od280_od315_of_diluted_wines": 3.47,
+      "proline": 920.0
+    },
+    "output": {
+      "predicted_class": 0,
+      "cultivar": "class_0",
+      "probabilities": {
+        "class_0": 0.935,
+        "class_1": 0.04,
+        "class_2": 0.025
+      },
+      "model": "wine-random-forest-v1"
+    },
+    "note": ""
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "health": {
+    "method": "GET",
+    "path": "/",
+    "status": 200,
+    "request_id": "f1caf303-ed2e-4df8-af41-95be29acf0f5",
+    "duration_ms": "1.979",
+    "body": {
+      "status": "healthy",
+      "model": "wine-random-forest-v1"
+    }
+  },
+  "single": {
+    "method": "POST",
+    "path": "/predict",
+    "status": 200,
+    "request_id": "0a6a4f5e-9310-4bf2-9478-c4ac8d0df415",
+    "duration_ms": "16.155",
+    "body": {
+      "predicted_class": 0,
+      "cultivar": "class_0",
+      "probabilities": {
+        "class_0": 0.935,
+        "class_1": 0.04,
+        "class_2": 0.025
+      },
+      "model": "wine-random-forest-v1",
+      "prediction_id": 9
+    }
+  },
+  "batch": {
+    "method": "POST",
+    "path": "/predict/batch",
+    "status": 200,
+    "request_id": "a4522ba9-80c3-4f97-b3db-ea56db810fbc",
+    "duration_ms": "27.546",
+    "body": {
+      "count": 2,
+      "predictions": [
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 10
+        },
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 11
+        }
+      ]
+    }
+  },
+  "csv": {
+    "method": "POST",
+    "path": "/predict/csv",
+    "status": 200,
+    "request_id": "cc387963-8092-44c6-a2ce-e37aa9820a14",
+    "duration_ms": "29.583",
+    "body": {
+      "count": 2,
+      "predictions": [
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 12
+        },
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 13
+        }
+      ]
+    }
+  },
+  "annotate": {
+    "method": "PATCH",
+    "path": "/predictions/9",
+    "status": 200,
+    "request_id": "677e7ce8-4860-4637-933d-bfa7c46717e0",
+    "duration_ms": "3.723",
+    "body": {
+      "id": 9,
+      "created_at": "2026-10-27T22:08:27.484Z",
+      "cultivar": "class_0",
+      "predicted_class": 0,
+      "input": {
+        "alcohol": 13.48,
+        "malic_acid": 1.81,
+        "ash": 2.41,
+        "alcalinity_of_ash": 20.5,
+        "magnesium": 100.0,
+        "total_phenols": 2.7,
+        "flavanoids": 2.98,
+        "nonflavanoid_phenols": 0.26,
+        "proanthocyanins": 1.86,
+        "color_intensity": 5.1,
+        "hue": 1.04,
+        "od280_od315_of_diluted_wines": 3.47,
+        "proline": 920.0
+      },
+      "output": {
+        "predicted_class": 0,
+        "cultivar": "class_0",
+        "probabilities": {
+          "class_0": 0.935,
+          "class_1": 0.04,
+          "class_2": 0.025
+        },
+        "model": "wine-random-forest-v1"
+      },
+      "note": "Verified through live API"
+    }
+  },
+  "history": {
+    "method": "GET",
+    "path": "/predictions?cultivar=class_0&limit=2&offset=0",
+    "status": 200,
+    "request_id": "fc9a9f55-4e61-4734-affe-64e1a6d91ffb",
+    "duration_ms": "0.901",
+    "body": {
+      "total": 12,
+      "limit": 2,
+      "offset": 0,
+      "items": [
+        {
+          "id": 13,
+          "created_at": "2026-10-27T22:08:27.547Z",
+          "cultivar": "class_0",
+          "predicted_class": 0,
+          "input": {
+            "alcohol": 13.48,
+            "malic_acid": 1.81,
+            "ash": 2.41,
+            "alcalinity_of_ash": 20.5,
+            "magnesium": 100.0,
+            "total_phenols": 2.7,
+            "flavanoids": 2.98,
+            "nonflavanoid_phenols": 0.26,
+            "proanthocyanins": 1.86,
+            "color_intensity": 5.1,
+            "hue": 1.04,
+            "od280_od315_of_diluted_wines": 3.47,
+            "proline": 920.0
+          },
+          "output": {
+            "predicted_class": 0,
+            "cultivar": "class_0",
+            "probabilities": {
+              "class_0": 0.935,
+              "class_1": 0.04,
+              "class_2": 0.025
+            },
+            "model": "wine-random-forest-v1"
+          },
+          "note": ""
+        },
+        {
+          "id": 12,
+          "created_at": "2026-10-27T22:08:27.535Z",
+          "cultivar": "class_0",
+          "predicted_class": 0,
+          "input": {
+            "alcohol": 13.48,
+            "malic_acid": 1.81,
+            "ash": 2.41,
+            "alcalinity_of_ash": 20.5,
+            "magnesium": 100.0,
+            "total_phenols": 2.7,
+            "flavanoids": 2.98,
+            "nonflavanoid_phenols": 0.26,
+            "proanthocyanins": 1.86,
+            "color_intensity": 5.1,
+            "hue": 1.04,
+            "od280_od315_of_diluted_wines": 3.47,
+            "proline": 920.0
+          },
+          "output": {
+            "predicted_class": 0,
+            "cultivar": "class_0",
+            "probabilities": {
+              "class_0": 0.935,
+              "class_1": 0.04,
+              "class_2": 0.025
+            },
+            "model": "wine-random-forest-v1"
+          },
+          "note": ""
+        }
+      ]
+    }
+  },
+  "invalid": {
+    "method": "POST",
+    "path": "/predict",
+    "status": 422,
+    "request_id": "b2568a4a-afe3-400d-942c-41e2183d51e5",
+    "duration_ms": "0.717",
+    "body": {
+      "error": "Request validation failed",
+      "detail": [
+        {
+          "type": "greater_than",
+          "loc": [
+            "body",
+            "alcohol"
+          ],
+          "msg": "Input should be greater than 0",
+          "input": -1,
+          "ctx": {
+            "gt": 0.0
+          }
+        }
+      ],
+      "request_id": "b2568a4a-afe3-400d-942c-41e2183d51e5"
+    }
+  },
+  "missing": {
+    "method": "GET",
+    "path": "/predictions/999999",
+    "status": 404,
+    "request_id": "37c6831e-0e81-4ff9-bc29-20942bb83d63",
+    "duration_ms": "0.585",
+    "body": {
+      "error": "Prediction not found",
+      "request_id": "37c6831e-0e81-4ff9-bc29-20942bb83d63"
+    }
+  },
+  "create_job": {
+    "method": "POST",
+    "path": "/jobs",
+    "status": 202,
+    "request_id": "07908dbc-8198-45db-8ce2-9e228d868a7f",
+    "duration_ms": "2.954",
+    "body": {
+      "job_id": "640d6974-3d3b-43da-9d12-482b439db521",
+      "status": "queued",
+      "status_url": "/jobs/640d6974-3d3b-43da-9d12-482b439db521"
+    }
+  },
+  "job_status": {
+    "method": "GET",
+    "path": "/jobs/640d6974-3d3b-43da-9d12-482b439db521",
+    "status": 200,
+    "request_id": "2ee9eb8b-b440-48e3-b127-08a4ca7d17b2",
+    "duration_ms": "0.718",
+    "body": {
+      "id": "640d6974-3d3b-43da-9d12-482b439db521",
+      "status": "completed",
+      "result": [
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 14
+        },
+        {
+          "predicted_class": 0,
+          "cultivar": "class_0",
+          "probabilities": {
+            "class_0": 0.935,
+            "class_1": 0.04,
+            "class_2": 0.025
+          },
+          "model": "wine-random-forest-v1",
+          "prediction_id": 15
+        }
+      ],
+      "error": null
+    }
+  },
+  "delete": {
+    "method": "DELETE",
+    "path": "/predictions/9",
+    "status": 204,
+    "request_id": "4d569227-ecf0-4b0f-a173-fb3f76740872",
+    "duration_ms": "3.632",
+    "body": null
+  },
+  "deleted": {
+    "method": "GET",
+    "path": "/predictions/9",
+    "status": 404,
+    "request_id": "7a088dd9-b886-4f7d-8449-9ffebc2f8ad3",
+    "duration_ms": "0.649",
+    "body": {
+      "error": "Prediction not found",
+      "request_id": "7a088dd9-b886-4f7d-8449-9ffebc2f8ad3"
+    }
+  },
+  "metrics": {
+    "method": "GET",
+    "path": "/metrics",
+    "status": 200,
+    "request_id": "2f409b91-0021-4b59-82f6-4cfc6c1ccfc7",
+    "duration_ms": "0.502",
+    "body": {
+      "requests_this_process": 33,
+      "errors_this_process": 5,
+      "saved_predictions": 13
+    }
+  }
+}

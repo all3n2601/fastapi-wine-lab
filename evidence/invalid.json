@@ -1,0 +1,18 @@
+{
+  "error": "Request validation failed",
+  "detail": [
+    {
+      "type": "greater_than",
+      "loc": [
+        "body",
+        "alcohol"
+      ],
+      "msg": "Input should be greater than 0",
+      "input": -1,
+      "ctx": {
+        "gt": 0.0
+      }
+    }
+  ],
+  "request_id": "b2568a4a-afe3-400d-942c-41e2183d51e5"
+}

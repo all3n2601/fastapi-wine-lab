@@ -1,0 +1,721 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Wine Cultivar Prediction API",
+    "description": "MLOps FastAPI lab: predict one of three wine cultivars from chemical measurements.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Health",
+        "operationId": "health__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/model-info": {
+      "get": {
+        "tags": [
+          "Model"
+        ],
+        "summary": "Model Info",
+        "operationId": "model_info_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "tags": [
+          "Prediction"
+        ],
+        "summary": "Predict",
+        "description": "Predict a cultivar and save the input and result in SQLite.",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WineData"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WineResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict/batch": {
+      "post": {
+        "tags": [
+          "Prediction"
+        ],
+        "summary": "Batch",
+        "description": "Validate the entire batch before saving any predictions (1-100 samples).",
+        "operationId": "batch_predict_batch_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict/csv": {
+      "post": {
+        "tags": [
+          "Prediction"
+        ],
+        "summary": "Csv Predict",
+        "description": "Upload UTF-8 CSV with exactly the 13 named feature columns; maximum 100 rows / 1 MB.",
+        "operationId": "csv_predict_predict_csv_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_csv_predict_predict_csv_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predictions": {
+      "get": {
+        "tags": [
+          "History"
+        ],
+        "summary": "History",
+        "description": "Filter saved results by cultivar and page through newest first.",
+        "operationId": "history_predictions_get",
+        "parameters": [
+          {
+            "name": "cultivar",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^class_[012]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cultivar"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 10,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predictions/{prediction_id}": {
+      "get": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Get Prediction",
+        "operationId": "get_prediction_predictions__prediction_id__get",
+        "parameters": [
+          {
+            "name": "prediction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Prediction Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Annotate",
+        "operationId": "annotate_predictions__prediction_id__patch",
+        "parameters": [
+          {
+            "name": "prediction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Prediction Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Annotation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "History"
+        ],
+        "summary": "Delete Prediction",
+        "operationId": "delete_prediction_predictions__prediction_id__delete",
+        "parameters": [
+          {
+            "name": "prediction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Prediction Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs": {
+      "post": {
+        "tags": [
+          "Background jobs"
+        ],
+        "summary": "Create Job",
+        "operationId": "create_job_jobs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs/{job_id}": {
+      "get": {
+        "tags": [
+          "Background jobs"
+        ],
+        "summary": "Job Status",
+        "operationId": "job_status_jobs__job_id__get",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "tags": [
+          "Monitoring"
+        ],
+        "summary": "Metrics",
+        "operationId": "metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Annotation": {
+        "properties": {
+          "note": {
+            "type": "string",
+            "maxLength": 500,
+            "title": "Note"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "note"
+        ],
+        "title": "Annotation"
+      },
+      "BatchRequest": {
+        "properties": {
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/WineData"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Samples"
+          }
+        },
+        "type": "object",
+        "required": [
+          "samples"
+        ],
+        "title": "BatchRequest"
+      },
+      "BatchResponse": {
+        "properties": {
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          },
+          "predictions": {
+            "items": {
+              "$ref": "#/components/schemas/WineResponse"
+            },
+            "type": "array",
+            "title": "Predictions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "count",
+          "predictions"
+        ],
+        "title": "BatchResponse"
+      },
+      "Body_csv_predict_predict_csv_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_csv_predict_predict_csv_post"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WineData": {
+        "properties": {
+          "alcohol": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Alcohol"
+          },
+          "malic_acid": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Malic Acid"
+          },
+          "ash": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Ash"
+          },
+          "alcalinity_of_ash": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Alcalinity Of Ash"
+          },
+          "magnesium": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Magnesium"
+          },
+          "total_phenols": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Total Phenols"
+          },
+          "flavanoids": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Flavanoids"
+          },
+          "nonflavanoid_phenols": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Nonflavanoid Phenols"
+          },
+          "proanthocyanins": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Proanthocyanins"
+          },
+          "color_intensity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Color Intensity"
+          },
+          "hue": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Hue"
+          },
+          "od280_od315_of_diluted_wines": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Od280 Od315 Of Diluted Wines"
+          },
+          "proline": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Proline"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "alcohol",
+          "malic_acid",
+          "ash",
+          "alcalinity_of_ash",
+          "magnesium",
+          "total_phenols",
+          "flavanoids",
+          "nonflavanoid_phenols",
+          "proanthocyanins",
+          "color_intensity",
+          "hue",
+          "od280_od315_of_diluted_wines",
+          "proline"
+        ],
+        "title": "WineData",
+        "example": {
+          "alcalinity_of_ash": 11.2,
+          "alcohol": 13.2,
+          "ash": 2.14,
+          "color_intensity": 4.38,
+          "flavanoids": 2.76,
+          "hue": 1.05,
+          "magnesium": 100,
+          "malic_acid": 1.78,
+          "nonflavanoid_phenols": 0.26,
+          "od280_od315_of_diluted_wines": 3.4,
+          "proanthocyanins": 1.28,
+          "proline": 1050,
+          "total_phenols": 2.65
+        }
+      },
+      "WineResponse": {
+        "properties": {
+          "predicted_class": {
+            "type": "integer",
+            "title": "Predicted Class"
+          },
+          "cultivar": {
+            "type": "string",
+            "title": "Cultivar"
+          },
+          "probabilities": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Probabilities"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "prediction_id": {
+            "type": "integer",
+            "title": "Prediction Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "predicted_class",
+          "cultivar",
+          "probabilities",
+          "model",
+          "prediction_id"
+        ],
+        "title": "WineResponse"
+      }
+    }
+  }
+}
